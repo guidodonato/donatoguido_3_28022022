@@ -36,6 +36,7 @@ $color-tertiaire: #99E2D0;
 $polices-titres:  Shrikhand, sans-serif;
 $polices-text: Roboto, sans-serif;
 $background_menu: #F2F2F2;
+$background-nav-btn: #404040;
 
 
 
@@ -97,30 +98,51 @@ $background_menu: #F2F2F2;
             width: 50%;
             height: 40px;
             border: 1px solid lighten($color-primaire,15%);
-            background-color: darken($color-secondaire, 15%);
-           
+            background-color: darken($color-secondaire, 15%);           
             box-shadow:  0 12px 16px  rgba(0, 0, 0, 0.04);
             border-radius: 20px/20px;
 
 }
-nav{
+.nav{
     width: 100%;
-}
+    }
 .nav__btn
 {
     width: 70%;
-    height: 50px;
+    height: 70px;
     margin-bottom: 20px;
-    border-radius: 10px/10px;
+    border: 0 solid $background-nav-btn;
+    border-radius: 15px/15px;
     text-align: center;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15 );
-    background-color: #FFFFFF;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.20);
+    background-color: lighten($background-menu, 2%);
+    position: relative;
+    left: 35%;
+    transform: translate(-35%);
+    z-index: -1;
     span
     {margin-left: 20px;
          font-size: 14px;
         font-weight: bold;
     }
-   
+   &--i{
+    color: #FFFFFF;
+    font-size: 10px;
+    text-align: center;
+    border: 1px $color-primaire solid;
+    background-color:$color-primaire;
+    width: 	20px;
+	height: 15px;
+    padding-top:5px;
+    border-radius: 50%;
+    position: relative;
+    left: 50px;
+    bottom: 2px;
+   }
+   &--icon
+   {
+     color: lighten( #000000, 50%);
+   }
 }
 
 .container-card
@@ -130,7 +152,7 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items:flex-start;      
  
 }
 .card-rest
@@ -145,7 +167,8 @@ nav{
     text-align: justify;
     transition: all 0.25s;
     line-height: 0;
-    
+    align-self: center;
+
 }
 .card-rest img
 {
@@ -158,16 +181,26 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 5px;
+    padding-top: 0;
+    padding-left: 5px;
+    padding-right: 10px;
     h2{
         font-size: 14px;
         font-weight: bold;
         padding-left: 5px;
+        padding-bottom: 5px;
     }
     p{
         font-size: 12px;
         padding-left: 5px;
     }
+    
+}
+.fa-heart
+{
+    position: relative;
+    top: 10px;
+    right: 5px;
 }
 .fpage
 {
@@ -199,5 +232,4 @@ nav{
         color: #FFFFFF;
         
     }
-  
-}
+} 
