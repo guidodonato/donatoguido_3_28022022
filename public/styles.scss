@@ -1,0 +1,163 @@
+@font-face {
+    font-family:'Shrikhand' ;
+    src: url("css/Shrikhand/Shrikhand-Regular.ttf") format('ttf');
+    src: local('Shrikhand');
+    font-weight: normal;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'Roboto';
+    src: url("css/Roboto/Roboto-Regular.ttf") format('ttf');
+    src: url("css/Roboto/Roboto-bold.ttf") format('ttf');
+    src: local('Roboto');
+    font-weight: normal;
+    font-style: normal;
+}
+body
+{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+$color-primaire: #9356DC;
+$color-secondaire: #FF79DA;
+$color-tertiaire: #99E2D0;
+$polices-titres:  Shrikhand, sans-serif;
+$polices-text: Roboto, sans-serif;
+$background_menu: #F2F2F2;
+
+
+
+.logo
+{
+    width: 70%;
+    font-family: $polices-titres;
+    text-align: center;
+    margin-left: 15%;
+    margin-top: 20px;
+}
+.accueil
+{
+    width: 100%;
+    background-color: $background_menu;
+    padding-bottom: 20px;
+    text-align: center; 
+    &__location
+    {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background-color: darken($background_menu, 10%);
+    box-shadow: inset 0px 5px 0px rgba(0, 0, 0, 0.1);
+    &__titre{
+        font-size: 11px;
+        margin-left: 10px;
+        color: lighten(#000000, 25%)
+    }
+    
+    }  
+    &__titre {
+        width: 50%;
+        font-size: 14px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        & > h1{
+            font-family: $polices-titres;
+        }
+
+    }
+    &__soustitre{
+        width: 60%;
+        font-size: 12px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        & > h2{
+            font-weight: normal;
+        }
+
+    }
+    
+}
+.accueil__btn{
+            width: 50%;
+            height: 40px;
+            border: 2px solid darken($color-secondaire,15%);
+            background-color: darken($color-secondaire, 15%);
+            border-radius: 20px/20px;
+
+}
+nav{
+    width: 100%;
+}
+.nav__btn
+{
+    width: 70%;
+    height: 40px;
+    border-radius: 10px/10px;
+    text-align: center;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15 );
+    background-color: #FFFFFF;
+    span{margin-left: 20px;}
+    
+}
+
+.container-card
+{
+    width: 100%;
+    background-color: lighten($background_menu, 5%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+ 
+}
+.card-rest
+{
+    width: 90%;
+    height: 200px;
+    background: #FFFFFF;
+    border-radius: 20px/20px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.20);
+    overflow: hidden;
+    margin-bottom: 15px;
+    text-align: justify;
+    transition: all 0.25s;
+    line-height: 0;
+     
+}
+.card-rest img
+{
+    width: 100%;
+    height: 80%;
+}
+
+.cardbody
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 5px;
+    h2{
+        font-size: 14px;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+    p{
+        font-size: 12px;
+        padding-left: 5px;
+    }
+}
