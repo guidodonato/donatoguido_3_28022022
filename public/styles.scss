@@ -26,6 +26,9 @@ body
 a{
     text-decoration: none;
 }
+a:visited{
+    color: #000000;
+}
 ul{
     list-style: none;
 }
@@ -37,6 +40,46 @@ $polices-titres:  Shrikhand, sans-serif;
 $polices-text: Roboto, sans-serif;
 $background_menu: #F2F2F2;
 $background-nav-btn: #404040;
+@mixin boxshadow{
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.20);
+}
+@mixin efecthover {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 15px/15px;
+        background-color: lighten($color-primaire, 25%);
+        opacity:0;
+        z-index: -1;
+        transition: opacity 250ms;
+   }
+    
+}
+@mixin efecthover-i {
+                  
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color:$color-primaire;
+        opacity:1;
+        z-index: 1;
+        transition: opacity 250ms;
+    }
+@mixin btn-color {  
+     background:linear-gradient(0deg,lighten($color-primaire,5),60%,$color-secondaire);
+}   
+
+
+
+
+
+
 
 
 
@@ -65,13 +108,15 @@ $background-nav-btn: #404040;
     &__titre{
         font-size: 11px;
         margin-left: 10px;
-        color: lighten(#000000, 25%)
+        color: lighten(#000000, 45%);
+        
     }
     
     }  
     &__titre {
         width: 60%;
         font-size: 14px;
+        margin-bottom: 20px;
         position: relative;
         left: 50%;
         transform: translate(-50%);
@@ -84,6 +129,7 @@ $background-nav-btn: #404040;
     &__soustitre{
         width: 80%;
         font-size: 10px;
+        margin-bottom: 20px;
         position: relative;
         left: 50%;
         transform: translate(-50%);
@@ -95,31 +141,54 @@ $background-nav-btn: #404040;
     
 }
 .accueil__btn{
+            cursor: pointer;
             width: 50%;
             height: 40px;
-            border: 1px solid lighten($color-primaire,15%);
-            background-color: darken($color-secondaire, 15%);           
-            box-shadow:  0 12px 16px  rgba(0, 0, 0, 0.04);
+            color: #FFFFFF;
+            border: 0;
+            @include btn-color;           
+            @include boxshadow;
             border-radius: 20px/20px;
 
 }
 .nav{
     width: 100%;
+    &__titre{
+        margin-left: 20px;
+    }
+    }
+.--nav{
+        width: 100%;
     }
 .nav__btn
 {
+    cursor: pointer;
     width: 70%;
     height: 70px;
     margin-bottom: 20px;
     border: 0 solid $background-nav-btn;
     border-radius: 15px/15px;
     text-align: center;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.20);
-    background-color: lighten($background-menu, 2%);
+    @include boxshadow;
+    background-color: $background-menu;
     position: relative;
     left: 35%;
     transform: translate(-35%);
-    z-index: -1;
+    z-index: 1;
+    &:hover{
+        .nav__btn--icon{
+                opacity: 1;
+                @include efecthover-i;
+            }
+            
+        
+        &::after{
+            opacity: 1;
+        }
+    }
+    @include efecthover;
+    
+    
     span
     {margin-left: 20px;
          font-size: 14px;
@@ -136,44 +205,59 @@ $background-nav-btn: #404040;
     padding-top:5px;
     border-radius: 50%;
     position: relative;
-    left: 50px;
-    bottom: 2px;
+    left: 13%;
+    bottom: 1%;
+    z-index: 2;
+
    }
    &--icon
    {
-     color: lighten( #000000, 50%);
-   }
+     color: lighten( #000000, 50%);     
+     }
+     
+   
+     
 }
 
 .container-card
 {
     width: 100%;
-    background-color: lighten($background_menu, 5%);
+    height: auto;
+    background-color: $background-menu;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:flex-start;      
- 
+   &__titre{
+       margin-left: 20px;
+   }
 }
 .card-rest
 {
     width: 90%;
-    height: 200px;
     background: #FFFFFF;
     border-radius: 20px/20px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.20);
-    overflow: hidden;
     margin-bottom: 15px;
     text-align: justify;
     transition: all 0.25s;
     line-height: 0;
     align-self: center;
-
+    &__image{
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 20px;
+        border-top-right-radius:20px ;
+    }
 }
+
 .card-rest img
 {
     width: 100%;
-    height: 80%;
+    height: 100%;
+    object-fit: cover;
+
 }
 
 .cardbody
@@ -198,14 +282,18 @@ $background-nav-btn: #404040;
 }
 .fa-heart
 {
+    cursor: pointer;
+    font-weight:normal;
     position: relative;
     top: 10px;
     right: 5px;
 }
+
 .fpage
 {
     width: 100%;
     height: 200px;
+    overflow: hidden;
     background: lighten(#000000, 20%);
     margin-bottom: 20px;
     text-align: left;
