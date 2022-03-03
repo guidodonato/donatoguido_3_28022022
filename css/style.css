@@ -1,14 +1,15 @@
 @font-face {
   font-family: "Shrikhand";
   src: url("css/Shrikhand/Shrikhand-Regular.ttf") format("ttf");
-  src: local("Shrikhand");
+  src: local("css/Shrikhand");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'Roboto';
   src: url("css/Roboto/Roboto-Regular.ttf") format("ttf");
   src: url("css/Roboto/Roboto-bold.ttf") format("ttf");
-  src: local("Roboto");
+  src: url("css/Roboto/Roboto-Italic.ttf") format("ttf");
+  src: local("css/Roboto");
   font-weight: normal;
   font-style: normal; }
 body {
@@ -30,7 +31,7 @@ ul {
 
 .logo {
   width: 70%;
-  font-family: Shrikhand, sans-serif;
+  font-family: "Shrikhand";
   text-align: center;
   margin-left: 15%;
   margin-top: 20px; }
@@ -59,7 +60,7 @@ ul {
     left: 50%;
     transform: translate(-50%); }
     .accueil__titre > h1 {
-      font-family: Shrikhand, sans-serif;
+      font-family: "Shrikhand";
       font-size: 20px; }
   .accueil__soustitre {
     width: 80%;
@@ -174,8 +175,7 @@ ul {
     height: 200px;
     position: relative;
     overflow: hidden;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px; }
+    border-radius: 20px 20px 0 0; }
 
 .card-rest img {
   width: 100%;
@@ -197,13 +197,14 @@ ul {
   .cardbody p {
     font-size: 12px;
     padding-left: 5px; }
-
-.fa-heart {
-  cursor: pointer;
-  font-weight: normal;
-  position: relative;
-  top: 10px;
-  right: 5px; }
+  .cardbody .icon {
+    cursor: pointer;
+    font-weight: normal;
+    position: relative;
+    color: #9356DC;
+    top: 10px;
+    right: 5;
+    z-index: 1; }
 
 .fpage {
   width: 100%;
@@ -228,5 +229,95 @@ ul {
     margin-right: 15px; }
   .links a {
     color: #FFFFFF; }
+
+/*---------------menu restaurants----------------------------*/
+.logo-btn {
+  margin-top: 20px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .logo-btn .logo {
+    position: relative;
+    right: 15%; }
+    .logo-btn .logo img {
+      width: 60%; }
+
+.btn-return {
+  position: relative;
+  left: 5%;
+  top: 35%; }
+
+.img-rest {
+  margin-top: 20px;
+  width: 100%; }
+  .img-rest img {
+    width: 100%;
+    object-fit: cover; }
+
+.rest-cart {
+  width: 100%;
+  height: auto;
+  margin-top: -15%;
+  padding-bottom: 20px;
+  background-color: #F2F2F2;
+  border-radius: 30px 30px 0 0;
+  position: relative;
+  z-index: 1; }
+  .rest-cart__name {
+    width: 90%;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline; }
+    .rest-cart__name h2 {
+      font-size: 2rem;
+      font-family: 'Shrikhand';
+      font-style: italic;
+      font-weight: bold;
+      margin-left: 5px; }
+
+.restaurant {
+  text-align: center;
+  width: 100%;
+  height: auto; }
+  .restaurant .t-cart {
+    display: inline block;
+    width: 4vh;
+    border-bottom: 3px solid #99E2D0;
+    line-height: 0;
+    text-align: left;
+    margin: 20px; }
+    .restaurant .t-cart h2 {
+      font-weight: normal;
+      font-size: 12px; }
+  .restaurant .btn-rest {
+    width: 90%;
+    height: 70px;
+    text-align: left;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    border-radius: 20px 20px 20px 20px; }
+  .restaurant h2 {
+    font-size: 16px;
+    margin-left: 10px; }
+  .restaurant p {
+    margin-left: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between; }
+  .restaurant span {
+    font-weight: bold;
+    margin-right: 10px; }
+  .restaurant--btn {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+
+.--fpage {
+  margin-bottom: -2%; }
 
 /*# sourceMappingURL=style.css.map */
