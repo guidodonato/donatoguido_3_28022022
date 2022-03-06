@@ -29,6 +29,13 @@ a:visited {
 ul {
   list-style: none; }
 
+@keyframes fullhaert {
+  0% {
+    transform: scale(0);
+    fill-opacity: 1; }
+  100% {
+    transform: scale(1);
+    fill-opacity: 1; } }
 .logo {
   width: 70%;
   font-family: "Shrikhand";
@@ -197,14 +204,23 @@ ul {
   .cardbody p {
     font-size: 12px;
     padding-left: 5px; }
-  .cardbody .icon {
-    cursor: pointer;
-    font-weight: normal;
-    position: relative;
-    color: #9356DC;
-    top: 10px;
-    right: 5;
-    z-index: 1; }
+  .cardbody .ico {
+    margin-right: 5px; }
+
+.ico {
+  cursor: pointer;
+  fill: #9356DC;
+  fill-opacity: 0;
+  stroke-width: 1rem;
+  stroke: #000000;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: 10px; }
+  .ico:active {
+    animation: fullhaert;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards; }
 
 .fpage {
   width: 100%;
@@ -279,6 +295,9 @@ ul {
       font-style: italic;
       font-weight: bold;
       margin-left: 5px; }
+    .rest-cart__name .ico {
+      position: relative;
+      top: 3px; }
 
 .restaurant {
   text-align: center;
@@ -300,7 +319,8 @@ ul {
     text-align: left;
     background-color: #FFFFFF;
     margin-bottom: 20px;
-    border-radius: 20px 20px 20px 20px; }
+    border-radius: 20px 20px 20px 20px;
+    line-height: 0.5; }
   .restaurant h2 {
     font-size: 16px;
     margin-left: 10px; }
