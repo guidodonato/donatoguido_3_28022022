@@ -353,7 +353,15 @@ button {
   animation-name: fadein;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.19, -0.06, 0.79, 0.96);
-  animation-duration: 3000ms; }
+  opacity: 0; }
+  .--efect-btn--1 {
+    animation-duration: 1000ms; }
+  .--efect-btn--2 {
+    animation-delay: 1000ms;
+    animation-duration: 1000ms; }
+  .--efect-btn--3 {
+    animation-delay: 2000ms;
+    animation-duration: 1000ms; }
 
 .--fpage {
   margin-bottom: -2%; }

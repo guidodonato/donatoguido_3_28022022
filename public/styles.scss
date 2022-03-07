@@ -492,7 +492,20 @@ button{
     animation-name: fadein;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(.19, -0.06, .79, .96);
-    animation-duration: 3000ms;}
+    opacity: 0;
+    &--1{
+        animation-duration: 1000ms;
+    }
+    &--2{
+        animation-delay: 1000ms;
+        animation-duration: 1000ms;
+    }
+    &--3{
+        animation-delay: 2000ms;
+        animation-duration: 1000ms;
+    }
+
+}
 
 .--fpage{
     margin-bottom: -2%;
