@@ -94,9 +94,79 @@ $border-btn: 20px 20px 20px 20px;
     }
 }
 
+/*--------------animation spinner----*/
 
-
-
+.load {
+    position: relative;
+    top: 35%;
+    left: 40%;
+    transform: translate(-40%, -35%);
+    opacity: 0;
+    &::before, &::after{
+        position: absolute;
+        border: 3px solid transparent;
+        border-top: 3px solid #FF79DA;
+        border-radius: 50%;
+        animation: spin linear 3;
+        content: '';
+        }
+        position: absolute;
+        border: 3px solid transparent;
+        border-top: 3px solid #FF79DA;
+        border-radius: 50%;
+        animation: spin linear 3s;
+        content: '';
+        height: 100px;
+        width: 100px;
+        animation-duration: 1.5s;
+  }
+  
+  .load::before{
+    height: 75px;
+    width: 75px;
+    top: 10px;
+    left: 10px;
+    animation-duration: 1.5s;
+  }
+.load::after{
+  height: 50px;
+  width: 50px;
+  top: 22px;
+  left: 22px;
+  animation-duration: 1.5s;
+}
+@keyframes spin {
+    from {
+    
+      opacity: 1;
+      
+      transform:  rotateZ(360deg);
+    }
+    to {
+  
+        opacity: 1;
+        transform:rotateZ(0deg);
+    }
+  }
+  
+@keyframes loading {
+    0%{
+        opacity: 0;
+        transform: translateX(-99999px);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.init{
+    opacity: 0;
+    animation-name: loading;
+    animation-delay: 2s;
+    animation-duration: 0ms;
+    animation-fill-mode: forwards;
+}
 
 .logo
 {
