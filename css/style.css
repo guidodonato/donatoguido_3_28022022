@@ -32,7 +32,7 @@ ul {
 @keyframes fullhaert {
   0% {
     transform: scale(0);
-    fill-opacity: 1; }
+    fill-opacity: 0; }
   100% {
     transform: scale(1);
     fill-opacity: 1; } }
@@ -213,14 +213,19 @@ ul {
   fill-opacity: 0;
   stroke-width: 1rem;
   stroke: #000000;
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   position: relative;
   top: 10px; }
   .ico:active {
     animation: fullhaert;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards; }
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite; }
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer; }
 
 .fpage {
   width: 100%;
@@ -247,6 +252,13 @@ ul {
     color: #FFFFFF; }
 
 /*---------------menu restaurants----------------------------*/
+@keyframes fadein {
+  0% {
+    transform: translatey(20px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
 .logo-btn {
   margin-top: 20px;
   width: 100%;
@@ -336,6 +348,12 @@ ul {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px; }
+
+.--efect-btn {
+  animation-name: fadein;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.19, -0.06, 0.79, 0.96);
+  animation-duration: 3000ms; }
 
 .--fpage {
   margin-bottom: -2%; }
