@@ -426,7 +426,7 @@ button {
     font-size: 16px;
     margin-left: 10px; }
   .btn-rest:hover .restaurant__span {
-    transform: translateX(-9vh); }
+    transform: translateX(-8.7vh); }
   .btn-rest:hover .__check {
     opacity: 1;
     transform: translateX(35.9vh) translateY(-5.7vh) rotate(360deg); }
