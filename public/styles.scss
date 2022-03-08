@@ -392,14 +392,15 @@ $border-btn: 20px 20px 20px 20px;
         width: 1.5rem;
         height: 1.5rem;
         position: relative;
-        top: 10px;
-        &:active{
-            animation: fullhaert;
-            animation-fill-mode:  forwards;
-            animation-iteration-count: infinite;
-           
-        }
-   
+        top: 10px;   
+    }
+    #btnhaert1, #btnhaert2, #btnhaert3, #btnhaert4{
+        display: none;
+    }
+    .btnhaert:checked + label > .ico {
+        animation-name: fullhaert;
+        animation-fill-mode: forwards;
+    
     }
 button{
     background: none;

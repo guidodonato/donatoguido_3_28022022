@@ -273,10 +273,13 @@ ul {
   height: 1.5rem;
   position: relative;
   top: 10px; }
-  .ico:active {
-    animation: fullhaert;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite; }
+
+#btnhaert1, #btnhaert2, #btnhaert3, #btnhaert4 {
+  display: none; }
+
+.btnhaert:checked + label > .ico {
+  animation-name: fullhaert;
+  animation-fill-mode: forwards; }
 
 button {
   background: none;
