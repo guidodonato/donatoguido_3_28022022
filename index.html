@@ -8,10 +8,8 @@
     <script src="https://kit.fontawesome.com/bd4cd0c7b6.js" crossorigin="anonymous"></script>
     <title>Ohmyfood</title>
 </head>
-<body>
-    
-    <div class="load"></div>   
-    
+<body>    
+    <div class="load"></div>
     <header class="init">
         <div class="logo"><img src="imagen/logo/ohmyfood@2x.svg" alt="imagen logo"></div>
         <div class="accueil">
@@ -20,7 +18,7 @@
                 <div class="accueil__location__titre"><h2>Paris,Belleville</h2></div>
             </div>
             <div class="accueil__titre">
-                <h1>Reservez le menu qui vous convient</h1>
+                <h1>Réservez le menu qui vous convient</h1>
             </div>
             <div class="accueil__soustitre">
                 <h2>Decouvrez des restaurants d'exception, selectionnes par nos soins.</h2>
@@ -31,86 +29,118 @@
         </div>    
     </header>
     <nav class="init">
-        <div class="nav"></div>
-            <div class="nav__titre"><h2>Foctionnement</h2></div>
-            <div class="--nav"><i class="fa-solid fa-1 nav__btn--i"></i><button class="nav__btn"><i class="fa-solid fa-mobile-screen-button nav__btn--icon"></i><span>choisissez un restaurant</span></button></div>
-            <div class="--nav"><i class="fa-solid fa-2 nav__btn--i"></i><button class="nav__btn"><i class="fa-solid fa-list-ul nav__btn--icon"></i><span>choisissez un restaurant</span></button></div>
-            <div class="--nav"><i class="fa-solid fa-3 nav__btn--i"></i><button class="nav__btn"><i class="fa-solid fa-store nav__btn--icon"></i><span>choisissez un restaurant</span></button> </div>
-     </div>
+        <div class="nav__titre"><h2>Fonctionnement</h2></div>
+        <div class="nav">                
+            <div class="c-nav"><i class="fa-solid fa-1 nav__btn--i"></i><button class="nav__btn"><i class="fa-solid fa-mobile-screen-button nav__btn--icon"></i><span class="navbtn">Choisissez un restaurant</span></button></div>
+            <div class="c-nav"><i class="fa-solid fa-2 nav__btn--i"></i><button class="nav__btn"><i class="fa-solid fa-list-ul nav__btn--icon"></i><span class="navbtn">Composez votre menu</span></button></div>
+            <div class="c-nav"><i class="fa-solid fa-3 nav__btn--i"></i><button class="nav__btn"><i class="fa-solid fa-store nav__btn--icon"></i><span class="navbtn">Dégustez au restaurant</span></button></div>
+        </div>
     </nav>
     <section class="init">
         <div class="container-card">
             <div id="rest" class="container-card__titre"><h2>Restaurants</h2></div>
-            <div class="card-rest">
-                <a href="menugout.html" >
-                    <div class="card-rest__image"><img src="imagen/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"alt="imagen La palette du goût"></div>
-                    <div class="cardbody">
-                        <div class="titre">
-                            <h2>La palette du goût</h2>
-                            <p class="text">Menilmontant</p>                            
-                        </div></a> 
-                        <input type="checkbox" class="btnhaert" id="btnhaert1" >
-                        <label for="btnhaert1">
-                        <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <g class="icon-svg">
-                                <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
-                            </g></svg>
-                        </div></label>
+            <div class="container-card--rest">
+                    <div class="card-rest">
+                            <a href="menugout.html" >
+                                <div class="card-rest__image"><img src="imagen/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="imagen La palette du goût"></div>
+                                    <div class="cardbody">
+                                        <div class="titre">
+                                            <h2>La palette du goût</h2>
+                                            <p class="text">Menilmontant</p>                            
+                                        </div>
+                                    </div>
+                            </a>
+                                    <div class="haert">
+                                        <input type="checkbox" class="btnhaert" id="btnhaert1" >
+                                        <label for="btnhaert1">
+                                            <i class="ico">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <defs>
+                                                        <linearGradient id="myGradient" gradientTransform="rotate(90)">
+                                                            <stop offset="5%"  stop-color="#9356DC" />
+                                                            <stop offset="95%" stop-color="#FF79DA" />
+                                                        </linearGradient>
+                                                    </defs>                            
+                                                    <g class="icon-svg">                
+                                                        <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
+                                                    </g>
+                                                </svg>
+                                            </i>
+                                        </label>
+                                    </div>
                     </div>    
-            </div>
-           
-            <div class="card-rest">
-                <a href="#">
-                    <div class="card-rest__image"><img src="imagen/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="imagen La note enchantée"></div>
-                    <div class="cardbody">
-                        <div>
-                            <h2>La note enchantée</h2>
-                            <p class="text">Charonne</p>
-                        </div></a> 
-                        <input type="checkbox" class="btnhaert" id="btnhaert2" >
-                        <label for="btnhaert2">
-                        <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <g class="icon-svg">
-                                <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
-                            </g></svg>
-                        </div></label>
+                
+            
+                    <div class="card-rest">
+                        <a href="menugout.html" >
+                            <div class="card-rest__image"><img src="imagen/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="imagen La palette du goût"></div>
+                                <div class="cardbody">
+                                    <div class="titre">
+                                        <h2>La note enchantée</h2>
+                                        <p class="text">Charonne</p>
+                                    </div>
+                                </div>
+                        </a>
+                                <div class="haert">
+                                    <input type="checkbox" class="btnhaert" id="btnhaert2" >
+                                    <label for="btnhaert2">
+                                        <i class="ico">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">                                                 
+                                                <g class="icon-svg">                
+                                                    <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
+                                                </g>
+                                            </svg>
+                                        </i>
+                                    </label>
+                                </div>
+                    </div>    
+                    <div class="card-rest">
+                        <a href="menugout.html" >
+                            <div class="card-rest__image"><img src="imagen/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="imagen La palette du goût"></div>
+                                <div class="cardbody">
+                                    <div class="titre">
+                                        <h2>À la française</h2>
+                                        <p class="text">Cite Rouge</p>
+                                     </div>
+                                </div>
+                            </a>
+                            <div class="haert">
+                                <input type="checkbox" class="btnhaert" id="btnhaert3" >
+                                <label for="btnhaert3">
+                                    <i class="ico">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">                                                 
+                                            <g class="icon-svg">                
+                                                <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
+                                            </g>
+                                        </svg>
+                                    </i>
+                                </label>
+                            </div>
+                    </div>    
+                    <div class="card-rest">
+                        <a href="menugout.html" >
+                            <div class="card-rest__image"><img src="imagen/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="imagen La palette du goût"></div>
+                                <div class="cardbody">
+                                    <div class="titre">
+                                        <h2>Le délice des sens</h2>
+                                        <p class="text">Folie-Méricourt</p>
+                                    </div>
+                                </div>
+                        </a>
+                        <div class="haert">
+                            <input type="checkbox" class="btnhaert" id="btnhaert4" >
+                            <label for="btnhaert4">
+                                <i class="ico">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">                                                 
+                                        <g class="icon-svg">                
+                                            <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
+                                        </g>
+                                    </svg>
+                                </i>
+                            </label>
+                        </div>
                     </div>
-            </div>
-
-            <div class="card-rest">
-                <a href="#">
-                    <div class="card-rest__image"><img src="imagen/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="imagen À la française"></div>
-                    <div class="cardbody">
-                        <div class="titre">
-                            <h2>À la française</h2>
-                            <p class="text">Cite Rouge</p>
-                        </div></a> 
-                        <input type="checkbox" class="btnhaert" id="btnhaert3" >
-                        <label for="btnhaert3">
-                        <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <g class="icon-svg">
-                                <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
-                            </g></svg>
-                        </div></label>
-                    </div> 
-            </div>
-
-            <div class="card-rest">
-                <a href="#">
-                   <div class="card-rest__image"><img src="imagen/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="imagen délice des sens" ></div>
-                    <div class="cardbody">
-                        <div class="titre">
-                            <h2>Le délice des sens</h2>
-                            <p class="text">Folie-Mericourt</p>
-                        </div></a> 
-                        <input type="checkbox" class="btnhaert" id="btnhaert4" >
-                        <label for="btnhaert4">
-                        <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <g class="icon-svg">
-                                <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
-                            </g></svg>
-                        </div></label>
-            </div>
+            </div>    
         </div>
     </section>
     <footer class="init">

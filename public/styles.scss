@@ -17,6 +17,7 @@
 body
 {
     width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
@@ -42,6 +43,120 @@ $background_menu: #F2F2F2;
 $background-nav-btn: #404040;
 $border-img:  20px 20px 0 0 ;
 $border-btn: 20px 20px 20px 20px;
+
+@mixin descktop {
+    @media screen and (min-width: 600px) {
+        
+          width: 22%;
+        
+       
+      }
+
+        
+    }  
+
+
+@mixin descktop--nav{
+    @media screen and ( min-width: 998px) {         
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap:nowrap;
+    .nav__btn{
+        width: 80%;
+    }
+    .nav__btn--i{
+        position: relative;
+        left: 10%;
+        bottom: 1%;
+         z-index: 2;
+
+    }
+    span{
+        font-size: 13px;
+    }
+    }
+}
+@mixin tablet--nav{
+    @media screen and ( min-width: 600px) {         
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap:nowrap;
+    .nav__btn{
+        width: 80%;
+    }
+    .nav__btn--i{
+        position: relative;
+        left: 10%;
+        bottom: 1%;
+         z-index: 2;
+
+    }
+    
+    }
+}
+@mixin descktop--rest{
+    @media screen and (min-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-wrap: wrap;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    .card-rest{
+        width: 40%;
+        margin: 20px;
+    }
+    }
+}
+
+@mixin descktop-menu{
+    @media screen and (min-width: 998px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items:center;
+        flex-wrap: nowrap;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+       
+    }
+}
+@mixin descktop-menubtn {
+    @media screen and (min-width: 998px) {
+       width: 90%;
+       .restaurant__span{
+          margin-right:  30px;
+       }
+
+       
+    }
+    
+}
+@mixin tablet-menubtn {
+    @media screen and (min-width: 600px) and (max-width: 997px) {
+       width: 60%;
+       position: relative;
+       left: 50%;
+       transform: translate(-50%);
+       
+    }
+    
+}
+@mixin descktop-menulogo {
+    @media screen and (min-width: 998px) {
+      .logo {   width:  60%;
+                margin-top: 30px;
+               margin-bottom: 20px;}
+       
+    }
+    
+}
 @mixin boxshadow{
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.20);
 }
@@ -80,7 +195,7 @@ $border-btn: 20px 20px 20px 20px;
     
 }
 @mixin efecthover-i {
-                  
+        content: "";       
         position: relative;
         top: 0;
         right: 0;
@@ -94,9 +209,6 @@ $border-btn: 20px 20px 20px 20px;
 @mixin btn-color {  
      background:linear-gradient(0deg,lighten($color-primaire,5),60%,$color-secondaire);
 }   
-@mixin color-icon{
-    color:linear-gradient(0deg,lighten($color-primaire,5),60%,$color-secondaire);
-}
 
 @keyframes fullhaert
 {
@@ -114,11 +226,13 @@ $border-btn: 20px 20px 20px 20px;
 /*--------------animation spinner----*/
 
 .load {
-    position: relative;
-    top: 35%;
-    left: 40%;
-    transform: translate(-40%, -35%);
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 40%;
     opacity: 0;
+    margin: auto;
     &::before, &::after{
         position: absolute;
         border: 3px solid transparent;
@@ -127,17 +241,15 @@ $border-btn: 20px 20px 20px 20px;
         animation: spin linear 3;
         content: '';
         }
-        position: absolute;
+        height: 100px;
+        width: 100px;
         border: 3px solid transparent;
         border-top: 3px solid #FF79DA;
         border-radius: 50%;
         animation: spin linear 3s;
-        content: '';
-        height: 100px;
-        width: 100px;
         animation-duration: 1.5s;
   }
-  
+ 
   .load::before{
     height: 75px;
     width: 75px;
@@ -178,7 +290,7 @@ $border-btn: 20px 20px 20px 20px;
     }
 }
 .init{
-    opacity: 0.3;
+    opacity: 0;
     animation-name: loading;
     animation-delay: 2s;
     animation-duration: 0ms;
@@ -216,7 +328,7 @@ $border-btn: 20px 20px 20px 20px;
     
     }  
     &__titre {
-        width: 60%;
+        width: 55%;
         font-size: 14px;
         margin-bottom: 20px;
         position: relative;
@@ -225,6 +337,7 @@ $border-btn: 20px 20px 20px 20px;
         & > h1{
             font-family: $polices-titres;
             font-size: 20px;
+            font-weight: bold;
         }
 
     }
@@ -244,27 +357,46 @@ $border-btn: 20px 20px 20px 20px;
 }
 .accueil__btn{
             cursor: pointer;
-            width: 50%;
+            padding: 5px;
+            width: 55%;
             height: 40px;
             color: #FFFFFF;
             border: 0;
             @include btn-color;           
             @include boxshadow;
             border-radius: 20px/20px;
-
+            @include descktop;
 }
 .nav{
     width: 100%;
+    @include descktop--nav;
+    @include  tablet--nav;
     &__titre{
         margin-left: 20px;
+        font-family: $polices-titres;
     }
     }
-.--nav{
+.c-nav{
         width: 100%;
+        display: flex;
+        align-items: baseline;
     }
+    .navbtn{
+        
+        flex-wrap: nowrap;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: $polices-text;
+    
+    }
+
+    
 .nav__btn
 {
     cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     width: 70%;
     height: 70px;
     margin-bottom: 20px;
@@ -279,10 +411,9 @@ $border-btn: 20px 20px 20px 20px;
     z-index: 1;
     &:hover{
         .nav__btn--icon{
-                opacity: 1;
-                @include efecthover-i;
-            }
-            
+            opacity: 0;
+            @include efecthover-i;
+        }     
         
         &::after{
             opacity: 1;
@@ -291,11 +422,7 @@ $border-btn: 20px 20px 20px 20px;
     @include efecthover;
     
     
-    span
-    {margin-left: 20px;
-         font-size: 14px;
-        font-weight: bold;
-    }
+  
    &--i{
     color: #FFFFFF;
     font-size: 10px;
@@ -308,18 +435,19 @@ $border-btn: 20px 20px 20px 20px;
     border-radius: 50%;
     position: relative;
     left: 13%;
-    bottom: 1%;
     z-index: 2;
 
    }
    &--icon
    {
-     color: lighten( #000000, 50%);     
-     }
+       
+     color: lighten(#000000, 50%);
      
+   }  
    
      
 }
+
 
 .container-card
 {
@@ -331,11 +459,26 @@ $border-btn: 20px 20px 20px 20px;
     justify-content: center;
     align-items:flex-start;      
    &__titre{
+       padding-top: 20px;
        margin-left: 20px;
+       font-family: $polices-titres;
+   }
+   &--rest{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+       @include descktop--rest;
    }
 }
 .card-rest
 {
+    padding: 0;
+    margin: 0;
     width: 90%;
     background: #FFFFFF;
     border-radius: 20px/20px;
@@ -363,12 +506,9 @@ $border-btn: 20px 20px 20px 20px;
 
 .cardbody
 {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-top: 0;
+    padding-top: 10px;
     padding-left: 5px;
-    padding-right: 10px;
+    padding-bottom: 0;
     h2{
         font-size: 14px;
         font-weight: bold;
@@ -385,7 +525,7 @@ $border-btn: 20px 20px 20px 20px;
 }
     .ico{
         cursor: pointer;
-        fill:$color-primaire;
+        fill:url(#myGradient);
         fill-opacity: 0;
         stroke-width: 1rem;        
         stroke: #000000;
@@ -394,21 +534,35 @@ $border-btn: 20px 20px 20px 20px;
         position: relative;
         top: 10px;   
     }
-    #btnhaert1, #btnhaert2, #btnhaert3, #btnhaert4{
+    .haert
+    {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        left: 90%;
+        transform: translateY(-35px);
+        z-index: 2;
+    }
+    .btnhaert{
         display: none;
     }
     .btnhaert:checked + label > .ico {
-        animation-name: fullhaert;
+        animation-name:  fullhaert;
+        animation-duration: 700ms;
         animation-fill-mode: forwards;
-    
-    }
-button{
+        animation-timing-function: ease-in-out;
+            
+        
+    }    
+  /* revisarrrrrrrr---------------*/  
+button{  
     background: none;
     border: 0;
     cursor: pointer;
         
     }
-
+/*----------------------------------------*/
    
 
 
@@ -422,7 +576,8 @@ button{
     text-align: left;
     line-height: 1;
     .titre{
-        margin-left: 8%;
+        font-family: $polices-titres;
+        margin-left: 35px;
         padding-top: 5px;
         font-size: 14px;
         color: #FFFFFF;
@@ -471,9 +626,9 @@ button{
     .logo{
         position: relative;
         right: 15%;
-        img{
-            width: 60%;
-        }
+        width: 60%;
+        @include descktop-menulogo;
+        
     }
     
 }
@@ -529,61 +684,71 @@ button{
 }
 .restaurant
 {
-    text-align: center;
+    text-align: left;
     width: 100%;
     height: auto;
-    .t-cart{
-        display: inline block;
-        width: 4vh;
-        border-bottom: 3px solid #99E2D0;
-        line-height: 0;
-        text-align: left;
-        margin:20px;
-        h2{
-            font-weight: normal;
-            font-size: 12px;
-        }
-    }
-    
-   
-            h2{
-                font-size: 16px;
-                margin-left: 10px;
-            }
-            &__p{
+    @include descktop-menu;
+              
+        &__p{
                 width: 100%;
                 margin-left: 10px;
-                font-size: 0.8rem;
+                font-size: 12px;
+                font-family: $polices-text;
                 display:flex;
                 justify-content: space-between;
                 align-items: baseline;
                 position: relative;
+                bottom: -20px;
                 z-index: -1;
                 }
-            &__span{
+        &__span{
                     display: inline-block;
                     text-align: center;
-                    width: 5vh;
-                    padding: 10px;
+                    width: 7vh;
+                    padding-top: 5px;
+                    padding-left: 10px;
+                    padding-bottom: 5px;
                     background-color: #FFFFFF;
                     font-weight: bold;
-                    margin-right: 10px;
+                    font-size:12px;
                     position: relative;
+                    margin-right: 10px;
                     z-index: 1;
                     transition: all 900ms cubic-bezier(.32,0,.07,1);
+                    
                 }
-    &--btn{
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        &--btn{
+           margin-top: 20px;
+           text-align: center;
+        }
+    
+}
+.t-cart{
+    display: inline-block;
+    width: 2.8vh;
+    border-bottom: 3px solid #99E2D0;
+    line-height: 0;
+    text-align: left;
+    margin:20px;
+    h2{
+        font-weight: normal;
+        font-size: 12px;
     }
 }
- 
+
+
+.menu{
+    width: 90%;
+   
+}
 .btn-rest
 {
-    width: 90%;
-    height: 70px;
+    @include descktop-menubtn;
+    @include tablet-menubtn;
+    width: 100%;
+    height: 70px;    
     overflow: hidden;
+    margin-left: 20px;
     text-align: left;
     background-color: #FFFFFF;
     margin-bottom: 20px;
@@ -591,20 +756,30 @@ button{
     line-height: 0.5;
     position: relative;
     z-index: 1;
-    h2{
+ 
+    &__titre{
+        font-family: $polices-text;
         font-size: 14px;
-        margin-left: 10px;}
+        margin-left: 10px;
+        font-weight: bold;
+
+    }
     &:hover{
         .restaurant__span{
             transform: translateX(-8.4vh);
+            
         }
         .__check{
             transform:  translateX(-220%) rotate(360deg);
             }
+        
+                
+         
+        
         &::after{
             opacity: 1;
             transform-origin: 100%;
-            transform: scaleX(0.2)
+            transform: scaleX(0.197)
 
 
             } 
@@ -618,15 +793,16 @@ svg{
         display: inline-block;
         fill:#FFFFFF;
         position: relative;
-        bottom: 70%;
+        bottom: 15%;
         left: 100%;
         z-index: 3;
         transition: all 900ms cubic-bezier(.32,0,.07,1);
+        
 }
 
 
 
-.--efect-btn{
+.c--efect-btn{
     animation-name: fadein;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(.19, -0.06, .79, .96);
@@ -645,6 +821,6 @@ svg{
 
 }
 
-.--fpage{
+.c--fpage{
     margin-bottom: -2%;
 }

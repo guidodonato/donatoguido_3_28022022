@@ -14,6 +14,7 @@
   font-style: normal; }
 body {
   width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
@@ -37,19 +38,19 @@ ul {
     fill-opacity: 1; } }
 /*--------------animation spinner----*/
 .load {
-  position: relative;
-  top: 35%;
-  left: 40%;
-  transform: translate(-40%, -35%);
-  opacity: 0;
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 40%;
+  opacity: 0;
+  margin: auto;
+  height: 100px;
+  width: 100px;
   border: 3px solid transparent;
   border-top: 3px solid #FF79DA;
   border-radius: 50%;
   animation: spin linear 3s;
-  content: '';
-  height: 100px;
-  width: 100px;
   animation-duration: 1.5s; }
   .load::before, .load::after {
     position: absolute;
@@ -86,7 +87,7 @@ ul {
   100% {
     opacity: 1; } }
 .init {
-  opacity: 0.3;
+  opacity: 0;
   animation-name: loading;
   animation-delay: 2s;
   animation-duration: 0ms;
@@ -116,7 +117,7 @@ ul {
       margin-left: 10px;
       color: #737373; }
   .accueil__titre {
-    width: 60%;
+    width: 55%;
     font-size: 14px;
     margin-bottom: 20px;
     position: relative;
@@ -124,7 +125,8 @@ ul {
     transform: translate(-50%); }
     .accueil__titre > h1 {
       font-family: "Shrikhand";
-      font-size: 20px; }
+      font-size: 20px;
+      font-weight: bold; }
   .accueil__soustitre {
     width: 80%;
     font-size: 10px;
@@ -137,24 +139,69 @@ ul {
 
 .accueil__btn {
   cursor: pointer;
-  width: 50%;
+  padding: 5px;
+  width: 55%;
   height: 40px;
   color: #FFFFFF;
   border: 0;
   background: linear-gradient(0deg, #a16be0, 60%, #FF79DA);
   box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
   border-radius: 20px/20px; }
+  @media screen and (min-width: 600px) {
+    .accueil__btn {
+      width: 22%; } }
 
 .nav {
   width: 100%; }
+  @media screen and (min-width: 998px) {
+    .nav {
+      height: 170px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: nowrap; }
+      .nav .nav__btn {
+        width: 80%; }
+      .nav .nav__btn--i {
+        position: relative;
+        left: 10%;
+        bottom: 1%;
+        z-index: 2; }
+      .nav span {
+        font-size: 13px; } }
+  @media screen and (min-width: 600px) {
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: nowrap; }
+      .nav .nav__btn {
+        width: 80%; }
+      .nav .nav__btn--i {
+        position: relative;
+        left: 10%;
+        bottom: 1%;
+        z-index: 2; } }
   .nav__titre {
-    margin-left: 20px; }
+    margin-left: 20px;
+    font-family: "Shrikhand"; }
 
-.--nav {
-  width: 100%; }
+.c-nav {
+  width: 100%;
+  display: flex;
+  align-items: baseline; }
+
+.navbtn {
+  flex-wrap: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif; }
 
 .nav__btn {
   cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   width: 70%;
   height: 70px;
   margin-bottom: 20px;
@@ -168,7 +215,8 @@ ul {
   transform: translate(-35%);
   z-index: 1; }
   .nav__btn:hover .nav__btn--icon {
-    opacity: 1;
+    opacity: 0;
+    content: "";
     position: relative;
     top: 0;
     right: 0;
@@ -192,10 +240,6 @@ ul {
     opacity: 0;
     z-index: -1;
     transition: opacity 250ms; }
-  .nav__btn span {
-    margin-left: 20px;
-    font-size: 14px;
-    font-weight: bold; }
   .nav__btn--i {
     color: #FFFFFF;
     font-size: 10px;
@@ -208,7 +252,6 @@ ul {
     border-radius: 50%;
     position: relative;
     left: 13%;
-    bottom: 1%;
     z-index: 2; }
   .nav__btn--icon {
     color: gray; }
@@ -222,9 +265,35 @@ ul {
   justify-content: center;
   align-items: flex-start; }
   .container-card__titre {
-    margin-left: 20px; }
+    padding-top: 20px;
+    margin-left: 20px;
+    font-family: "Shrikhand"; }
+  .container-card--rest {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%); }
+    @media screen and (min-width: 600px) {
+      .container-card--rest {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%); }
+        .container-card--rest .card-rest {
+          width: 40%;
+          margin: 20px; } }
 
 .card-rest {
+  padding: 0;
+  margin: 0;
   width: 90%;
   background: #FFFFFF;
   border-radius: 20px/20px;
@@ -246,12 +315,9 @@ ul {
   object-fit: cover; }
 
 .cardbody {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding-top: 0;
+  padding-top: 10px;
   padding-left: 5px;
-  padding-right: 10px; }
+  padding-bottom: 0; }
   .cardbody h2 {
     font-size: 14px;
     font-weight: bold;
@@ -265,7 +331,7 @@ ul {
 
 .ico {
   cursor: pointer;
-  fill: #9356DC;
+  fill: url(#myGradient);
   fill-opacity: 0;
   stroke-width: 1rem;
   stroke: #000000;
@@ -274,18 +340,31 @@ ul {
   position: relative;
   top: 10px; }
 
-#btnhaert1, #btnhaert2, #btnhaert3, #btnhaert4 {
+.haert {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 90%;
+  transform: translateY(-35px);
+  z-index: 2; }
+
+.btnhaert {
   display: none; }
 
 .btnhaert:checked + label > .ico {
   animation-name: fullhaert;
-  animation-fill-mode: forwards; }
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out; }
 
+/* revisarrrrrrrr---------------*/
 button {
   background: none;
   border: 0;
   cursor: pointer; }
 
+/*----------------------------------------*/
 .fpage {
   width: 100%;
   height: 200px;
@@ -295,7 +374,8 @@ button {
   text-align: left;
   line-height: 1; }
   .fpage .titre {
-    margin-left: 8%;
+    font-family: "Shrikhand";
+    margin-left: 35px;
     padding-top: 5px;
     font-size: 14px;
     color: #FFFFFF; }
@@ -327,9 +407,13 @@ button {
   align-items: center; }
   .logo-btn .logo {
     position: relative;
-    right: 15%; }
-    .logo-btn .logo img {
-      width: 60%; }
+    right: 15%;
+    width: 60%; }
+    @media screen and (min-width: 998px) {
+      .logo-btn .logo .logo {
+        width: 60%;
+        margin-top: 30px;
+        margin-bottom: 20px; } }
 
 .btn-return {
   position: relative;
@@ -371,51 +455,67 @@ button {
       top: 3px; }
 
 .restaurant {
-  text-align: center;
+  text-align: left;
   width: 100%;
   height: auto; }
-  .restaurant .t-cart {
-    display: inline block;
-    width: 4vh;
-    border-bottom: 3px solid #99E2D0;
-    line-height: 0;
-    text-align: left;
-    margin: 20px; }
-    .restaurant .t-cart h2 {
-      font-weight: normal;
-      font-size: 12px; }
-  .restaurant h2 {
-    font-size: 16px;
-    margin-left: 10px; }
+  @media screen and (min-width: 998px) {
+    .restaurant {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: nowrap;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%); } }
   .restaurant__p {
     width: 100%;
     margin-left: 10px;
-    font-size: 0.8rem;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     position: relative;
+    bottom: -20px;
     z-index: -1; }
   .restaurant__span {
     display: inline-block;
     text-align: center;
-    width: 5vh;
-    padding: 10px;
+    width: 7vh;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
     background-color: #FFFFFF;
     font-weight: bold;
-    margin-right: 10px;
+    font-size: 12px;
     position: relative;
+    margin-right: 10px;
     z-index: 1;
     transition: all 900ms cubic-bezier(0.32, 0, 0.07, 1); }
   .restaurant--btn {
-    text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px; }
+    text-align: center; }
+
+.t-cart {
+  display: inline-block;
+  width: 2.8vh;
+  border-bottom: 3px solid #99E2D0;
+  line-height: 0;
+  text-align: left;
+  margin: 20px; }
+  .t-cart h2 {
+    font-weight: normal;
+    font-size: 12px; }
+
+.menu {
+  width: 90%; }
 
 .btn-rest {
-  width: 90%;
+  width: 100%;
   height: 70px;
   overflow: hidden;
+  margin-left: 20px;
   text-align: left;
   background-color: #FFFFFF;
   margin-bottom: 20px;
@@ -423,9 +523,22 @@ button {
   line-height: 0.5;
   position: relative;
   z-index: 1; }
-  .btn-rest h2 {
+  @media screen and (min-width: 998px) {
+    .btn-rest {
+      width: 90%; }
+      .btn-rest .restaurant__span {
+        margin-right: 30px; } }
+  @media screen and (min-width: 600px) and (max-width: 997px) {
+    .btn-rest {
+      width: 60%;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%); } }
+  .btn-rest__titre {
+    font-family: "Roboto", sans-serif;
     font-size: 14px;
-    margin-left: 10px; }
+    margin-left: 10px;
+    font-weight: bold; }
   .btn-rest:hover .restaurant__span {
     transform: translateX(-8.4vh); }
   .btn-rest:hover .__check {
@@ -433,7 +546,7 @@ button {
   .btn-rest:hover::after {
     opacity: 1;
     transform-origin: 100%;
-    transform: scaleX(0.2); }
+    transform: scaleX(0.197); }
   .btn-rest::after {
     content: "";
     position: absolute;
@@ -456,26 +569,26 @@ svg {
   display: inline-block;
   fill: #FFFFFF;
   position: relative;
-  bottom: 70%;
+  bottom: 15%;
   left: 100%;
   z-index: 3;
   transition: all 900ms cubic-bezier(0.32, 0, 0.07, 1); }
 
-.--efect-btn {
+.c--efect-btn {
   animation-name: fadein;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.19, -0.06, 0.79, 0.96);
   opacity: 0; }
-  .--efect-btn--1 {
+  .c--efect-btn--1 {
     animation-duration: 1000ms; }
-  .--efect-btn--2 {
+  .c--efect-btn--2 {
     animation-delay: 1000ms;
     animation-duration: 1000ms; }
-  .--efect-btn--3 {
+  .c--efect-btn--3 {
     animation-delay: 2000ms;
     animation-duration: 1000ms; }
 
-.--fpage {
+.c--fpage {
   margin-bottom: -2%; }
 
 /*# sourceMappingURL=style.css.map */
