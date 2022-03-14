@@ -37,8 +37,8 @@ ul{
 $color-primaire: #9356DC;
 $color-secondaire: #FF79DA;
 $color-tertiaire: #99E2D0;
-$polices-titres: 'Shrikhand';
-$polices-text: 'Roboto', sans-serif;
+$polices-titres: Shrikhand, sans-serif;
+$polices-text: Roboto, sans-serif;
 $background_menu: #F2F2F2;
 $background-nav-btn: #404040;
 $border-img:  20px 20px 0 0 ;
@@ -74,7 +74,7 @@ $border-btn: 20px 20px 20px 20px;
 
     }
     span{
-        font-size: 13px;
+        font-size: 12px;
     }
     }
 }
@@ -132,8 +132,14 @@ $border-btn: 20px 20px 20px 20px;
        width: 90%;
        .restaurant__span{
           margin-right:  30px;
+          font-size: 12px;
+          margin-left: 0;
        }
-
+       .p-cart{
+        width: 100%;
+        font-size: 12px;
+        text-align: left;
+    }
        
     }
     
@@ -210,6 +216,19 @@ $border-btn: 20px 20px 20px 20px;
      background:linear-gradient(0deg,lighten($color-primaire,5),60%,$color-secondaire);
 }   
 
+@-webkit-keyframes fullhaert
+{
+    0%{
+        transform: scale(0);
+        fill-opacity: 0;  
+    }
+
+    100%{
+        transform: scale(1);
+        fill-opacity: 1;
+    }
+}   
+
 @keyframes fullhaert
 {
     0%{
@@ -238,7 +257,8 @@ $border-btn: 20px 20px 20px 20px;
         border: 3px solid transparent;
         border-top: 3px solid #FF79DA;
         border-radius: 50%;
-        animation: spin linear 3;
+        -webkit-animation: spin linear 3;
+                animation: spin linear 3;
         content: '';
         }
         height: 100px;
@@ -246,24 +266,40 @@ $border-btn: 20px 20px 20px 20px;
         border: 3px solid transparent;
         border-top: 3px solid #FF79DA;
         border-radius: 50%;
-        animation: spin linear 3s;
-        animation-duration: 1.5s;
+        -webkit-animation: spin linear 3s;
+                animation: spin linear 3s;
+        -webkit-animation-duration: 1.5s;
+                animation-duration: 1.5s;
   }
- 
   .load::before{
     height: 75px;
     width: 75px;
     top: 10px;
     left: 10px;
-    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
   }
 .load::after{
   height: 50px;
   width: 50px;
   top: 22px;
   left: 22px;
-  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
 }
+@-webkit-keyframes spin {
+    from {
+    
+      opacity: 1;
+      
+      transform:  rotateZ(360deg);
+    }
+    to {
+  
+        opacity: 1;
+        transform:rotateZ(0deg);
+    }
+  }
 @keyframes spin {
     from {
     
@@ -278,6 +314,18 @@ $border-btn: 20px 20px 20px 20px;
     }
   }
   
+@-webkit-keyframes loading {
+    0%{
+        opacity: 0;
+        
+    }
+    
+    100%{
+        opacity: 1;
+       
+    }
+}
+  
 @keyframes loading {
     0%{
         opacity: 0;
@@ -291,10 +339,14 @@ $border-btn: 20px 20px 20px 20px;
 }
 .init{
     opacity: 0;
-    animation-name: loading;
-    animation-delay: 2s;
-    animation-duration: 0ms;
-    animation-fill-mode: forwards;
+    -webkit-animation-name: loading;
+            animation-name: loading;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+    -webkit-animation-duration: 0ms;
+            animation-duration: 0ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
 }
 
 .logo
@@ -500,7 +552,8 @@ $border-btn: 20px 20px 20px 20px;
 {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 
 }
 
@@ -548,10 +601,14 @@ $border-btn: 20px 20px 20px 20px;
         display: none;
     }
     .btnhaert:checked + label > .ico {
-        animation-name:  fullhaert;
-        animation-duration: 700ms;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
+        -webkit-animation-name:  fullhaert;
+                animation-name:  fullhaert;
+        -webkit-animation-duration: 700ms;
+                animation-duration: 700ms;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
             
         
     }    
@@ -572,7 +629,7 @@ button{
     height: 200px;
     overflow: hidden;
     background: lighten(#000000, 20%);
-    margin-bottom: 20px;
+   
     text-align: left;
     line-height: 1;
     .titre{
@@ -601,6 +658,17 @@ button{
 } 
 
 /*---------------menu restaurants----------------------------*/
+@-webkit-keyframes fadein{
+    0%{
+        transform:translatey(20px);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 @keyframes fadein{
     0%{
         transform:translatey(20px);
@@ -642,7 +710,8 @@ button{
     width: 100%;  
     img{
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         
     }
 }
@@ -668,7 +737,7 @@ button{
 
         h2{
             font-size: 2rem;
-            font-family: 'Shrikhand';
+            font-family: $polices-titres;
             font-style: italic;
             font-weight: bold;
             margin-left: 5px;
@@ -803,24 +872,29 @@ svg{
 
 
 .c--efect-btn{
-    animation-name: fadein;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(.19, -0.06, .79, .96);
+    -webkit-animation-name: fadein;
+            animation-name: fadein;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(.19, -0.06, .79, .96);
+            animation-timing-function: cubic-bezier(.19, -0.06, .79, .96);
     opacity: 0;
     &--1{
-        animation-duration: 1000ms;
+        -webkit-animation-duration: 1000ms;
+                animation-duration: 1000ms;
     }
     &--2{
-        animation-delay: 1000ms;
-        animation-duration: 1000ms;
+        -webkit-animation-delay: 1000ms;
+                animation-delay: 1000ms;
+        -webkit-animation-duration: 1000ms;
+                animation-duration: 1000ms;
     }
     &--3{
-        animation-delay: 2000ms;
-        animation-duration: 1000ms;
+        -webkit-animation-delay: 2000ms;
+                animation-delay: 2000ms;
+        -webkit-animation-duration: 1000ms;
+                animation-duration: 1000ms;
     }
 
 }
 
-.c--fpage{
-    margin-bottom: -2%;
-}
