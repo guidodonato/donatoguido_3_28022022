@@ -1,0 +1,67 @@
+
+
+/*-----animation de remplissage du cœur-----*/
+@keyframes fullhaert
+{
+    0%{
+        transform: scale(0);
+        fill-opacity: 0;  
+    }
+
+    100%{
+        transform: scale(1);
+        fill-opacity: 1;
+    }
+}
+
+/*------animation sipnner o loading -----*/
+@keyframes spin {
+    from {
+    
+      opacity: 1;
+      
+      transform:  rotateZ(360deg);
+    }
+    to {
+  
+        opacity: 1;
+        transform:rotateZ(0deg);
+    }
+ } 
+
+
+@keyframes loading {
+    0%{
+        opacity: 0;
+        
+    }
+    
+    100%{
+        opacity: 1;
+       
+    }
+}
+
+/*----animation des buttons de menu----*/
+@keyframes fadein{
+    0%{
+        transform:translatey(20px);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/*-----animation pour les tres point----*/
+@keyframes points {
+    0%{
+        opacity: 0;
+      
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}

@@ -1,0 +1,44 @@
+
+/*bloc de buttons de menu de restaurant*/
+.restaurant
+{
+    text-align: left;
+    width: 100%;
+    height: auto;
+    @include descktop-menu;
+              
+        &__p{
+                width: 100%;
+                margin-left: 10px;
+                font-size: 12px;
+                font-family: $polices-text;
+                display:flex;
+                justify-content: space-between;
+                align-items: baseline;
+                position: relative;
+                bottom: -20px;
+                z-index: -1;
+                }
+        &__span{
+                    display: inline-block;
+                    text-align: center;
+                    width: 4vh;
+                    padding-top: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 5px;
+                    background-color:#FFFFFF;
+                    font-weight: bold;
+                    font-size:12px;
+                    position: relative;
+                    margin-right: 10px;
+                    z-index: 1;
+                    transition: all 900ms cubic-bezier(.32,0,.07,1);
+                    
+                }
+        &--btn{
+           margin-top: 20px;
+           text-align: center;
+        }
+    
+}

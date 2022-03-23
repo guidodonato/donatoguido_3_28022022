@@ -1,0 +1,256 @@
+@mixin descktop {
+    @media screen and (min-width: 600px) {
+        
+          width: 22%;
+        
+       
+      }
+
+        
+    }  
+
+
+@mixin descktop--nav{
+    @media screen and ( min-width: 998px) {         
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap:nowrap;
+    .nav__btn{
+        width: 80%;
+    }
+    .nav__btn--i{
+        position: relative;
+        left: 10%;
+        bottom: 1%;
+         z-index: 2;
+
+    }
+    span{
+        font-size: 12px;
+    }
+    }
+}
+@mixin tablet--nav{
+    @media screen and ( min-width: 600px) {         
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap:nowrap;
+    .nav__btn{
+        width: 80%;
+    }
+    .nav__btn--i{
+        position: relative;
+        left: 10%;
+        bottom: 1%;
+         z-index: 2;
+
+    }
+    
+    }
+}
+@mixin descktop--rest{
+    @media screen and (min-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-wrap: wrap;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    .card-rest{
+        width: 40%;
+        margin: 20px;
+    }
+    }
+}
+@mixin descktop-menu{
+    @media screen and (min-width: 998px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items:center;
+        flex-wrap: nowrap;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+       
+    }
+}
+@mixin entreedescktop {
+    @media screen and (min-width: 998px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items:center;
+        flex-wrap: wrap;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+       
+    }
+}
+@mixin btnentree{
+    @media  screen and (min-width: 998px) {
+         width: 35%;
+         .restaurant__span{
+             margin-right: 30px;}
+            
+    }
+    }
+@mixin menu-imgdescktop{
+        @media screen and (min-width: 998px) {
+           
+            height: 700px;
+         }
+         
+     }
+ @mixin menu-imgtablet {
+        @media screen and (min-width: 600px) and (max-width: 997px) {
+         height: 500px;
+        }
+        
+    }
+@mixin descktop-menubtn {
+    @media screen and (min-width: 998px) {
+       width: 90%;
+       .restaurant__span{
+          margin-right:  30px;
+          font-size: 12px;
+          margin-left: 0;
+       }
+       .p-cart{
+        width: 100%;
+        font-size: 12px;
+        text-align: left;
+    }
+       
+    }
+    
+}
+@mixin tablet-menubtn {
+    @media screen and (min-width: 600px) and (max-width: 997px) {
+       width: 60%;
+       position: relative;
+       left: 50%;
+       transform: translate(-50%);
+       
+    }
+    
+}
+@mixin descktop-menulogo {
+    @media screen and (min-width: 998px) {
+      .logo {   width:  60%;
+                margin-top: 30px;
+               margin-bottom: 20px;}
+       
+    }
+    
+}
+@mixin cartel-descktop{
+    @media screen and (min-width: 998px){
+        top: 8%;
+        left: 35%;
+    }
+}
+@mixin cartel2-descktop{
+    @media screen and (min-width: 998px){
+        top: 8%;
+        left: 82%;
+    }
+}
+@mixin cartel-tablet{
+    @media screen and (min-width: 600px) and (max-width: 997px){
+        top: 8%;
+        left: 30%;
+    }
+}
+@mixin cartel2-tablet{
+    @media screen and (min-width: 600px) and (max-width: 997px){
+        top: 8%;
+        left: 79%;
+    }
+}
+@mixin boxshadow{
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.20);
+}
+@mixin efecthover {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 15px/15px;
+        background-color: lighten($color-primaire, 25%);
+        opacity:0;
+        z-index: -1;
+        transition: opacity 250ms;
+   }
+    
+}
+@mixin efecthover-2 {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin-left: 10px;
+        border-radius:$border-btn;
+        background-color: #99E2D0;
+        opacity:0;
+        z-index: 2;
+        transform: scaleX(0);
+        transform-origin: 100%;
+        transition: all 900ms cubic-bezier(.32,0,.07,1);
+   }
+    
+}
+@mixin efecthover-i {
+        content: "";       
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color:$color-primaire;
+        opacity:1;
+        z-index: 1;
+        transition: opacity 250ms;
+    }
+    @mixin cart-l{
+        @media screen and (max-width: 390px) {
+    
+            .p-cart{
+                width:199px;
+            }
+          
+            .cart-large{
+                width: 6vh;
+                
+                &::before{
+                    padding: 0;
+                    margin: 0;
+                    content: "...";
+                    position: relative;
+                    right: 5%;
+                    opacity: 0;   
+                    transform-origin: 100%;            
+                    animation-name: points ;
+                    animation-delay: 750ms;
+                    animation-timing-function: cubic-bezier(.32,0,.07,1);
+                    animation-fill-mode: forwards;
+                    
+                }
+            }
+        }   
+    }
+@mixin btn-color {  
+     background:linear-gradient(0deg,lighten($color-primaire,5),60%,$color-secondaire);
+}   

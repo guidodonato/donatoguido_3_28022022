@@ -1,0 +1,185 @@
+/*----CARD REST ACCUEIL----*/
+.logo-btn
+{
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    .logo{
+        position: relative;
+        right: 15%;
+        width: 60%;
+        @include descktop-menulogo;
+        
+    }
+    
+}
+.container-card
+{
+    width: 100%;
+    height: auto;
+    background-color: $background-menu;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;      
+   &__titre{
+       padding-top: 20px;
+       margin-left: 20px;
+       font-family: $polices-titres;
+   }
+   &--rest{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+       @include descktop--rest;
+   }
+}
+.nouveau{
+    @include cartel-descktop;
+    @include cartel-tablet;
+    width: 100px;
+    text-align: center;
+    position:absolute;  
+    top: 2%;
+    left: 63%;
+    right: 0;
+    border-radius: 4px/4px;
+    background-color: $color-tertiaire;
+    color: darken($color-tertiaire, 40%);
+    &__p{
+        font-weight: bold;
+    }
+
+}
+.nouveau2 {
+    @include cartel2-descktop;
+    @include cartel2-tablet;
+    width: 100px;
+    text-align: center;
+    position:absolute;  
+    top: 27%;
+    left: 63%;
+    border-radius: 4px/4px;
+    background-color: $color-tertiaire;
+    color: darken($color-tertiaire, 40%);
+&__p{
+    font-weight: bold;
+}
+
+}
+.card-rest
+{
+    padding: 0;
+    margin: 0;
+    width: 90%;
+    background: #FFFFFF;
+    border-radius: 20px/20px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.20);
+    margin-bottom: 15px;
+    text-align: justify;
+    transition: all 0.25s;
+    line-height: 0;
+    align-self: center;
+    &__image{
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+       border-radius: $border-img ;
+    }
+}
+
+.card-rest img
+{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+
+}
+.cardbody
+{
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 0;
+    h2{
+        font-size: 14px;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    p{
+        font-size: 12px;
+        padding-left: 5px;
+    }
+    .ico{
+        margin-right: 5px;
+    }
+}
+
+/*---CARD  REST  MENU ------*/
+
+.img-rest{
+    @include menu-imgdescktop;
+    @include menu-imgtablet;
+    margin-top: 20px;
+    width: 100%;
+    height: 250px; 
+    img{
+        
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+}
+.rest-cart
+{
+    
+    width: 100%;
+    height: auto;
+    margin-top: -15%;
+    padding-bottom: 20px;
+    background-color:$background_menu;
+    border-radius: 30px 30px 0 0;
+    position: relative;    
+    z-index: 1;    
+
+    &__name{
+        width: 90%;        
+        padding-top: 10px;
+        padding-left: 10px;        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+       
+        
+        
+
+        h2{
+            font-size: 2rem;
+            font-family: $polices-titres;
+            font-style: italic;
+            font-weight: bold;
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+        
+        .ico{
+            position:relative;
+            top: 3px;
+            
+        }
+        
+    }
+}

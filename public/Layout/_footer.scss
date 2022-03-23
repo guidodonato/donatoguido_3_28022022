@@ -1,0 +1,33 @@
+.fpage
+{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: lighten(#000000, 20%);
+   
+    text-align: left;
+    line-height: 1;
+    .titre{
+        font-family: $polices-titres;
+        margin-left: 35px;
+        padding-top: 5px;
+        font-size: 14px;
+        color: #FFFFFF;
+    }
+    .__links{
+    color: #FFFFFF;
+    font-size: 12px;
+    }
+}
+
+.links{
+    margin-bottom: 10px;
+    i{
+        margin-right: 15px;
+    }
+
+    a{
+        color: #FFFFFF;
+        
+    }
+} 
