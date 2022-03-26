@@ -205,25 +205,22 @@
         border-radius:$border-btn;
         background-color: #99E2D0;
         opacity:0;
-        z-index: 2;
+        z-index: -1;
         transform: scaleX(0);
         transform-origin: 100%;
         transition: all 900ms cubic-bezier(.32,0,.07,1);
    }
     
 }
+
 @mixin efecthover-i {
-        content: "";       
-        position: relative;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        content: "";                
         color:$color-primaire;
-        opacity:1;
-        z-index: 1;
+        opacity: 1;     
         transition: opacity 250ms;
     }
+ 
+    
     @mixin cart-l{
         @media screen and (max-width: 390px) {
     

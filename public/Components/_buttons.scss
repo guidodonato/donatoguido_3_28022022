@@ -47,10 +47,10 @@ transform: translate(-35%);
 z-index: 1;
 &:hover{
     .nav__btn--icon{
-        opacity: 0;
-        @include efecthover-i;
-    }     
-    
+       @include efecthover-i;
+    }
+     
+       
     &::after{
         opacity: 1;
     }
@@ -71,17 +71,17 @@ padding-top:5px;
 border-radius: 50%;
 position: relative;
 left: 13%;
-z-index: 2;
+z-index: 3;
 
 }
 &--icon
 {
-   
- color: lighten(#000000, 50%);
- 
-}  
+   color: lighten(#000000, 50%);
+  
+}
 
- 
+
+
 }
 
 /*buttons de cœur*/
