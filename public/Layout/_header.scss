@@ -11,8 +11,8 @@
         border: 3px solid transparent;
         border-top: 3px solid #FF79DA;
         border-radius: 50%;
-        -webkit-animation: spin linear 3;
-                animation: spin linear 3;
+        -webkit-animation: spin linear 2;
+                animation: spin linear 2;
         content: '';
         }
 
@@ -21,10 +21,11 @@
         border: 3px solid transparent;
         border-top: 3px solid #FF79DA;
         border-radius: 50%;
-        -webkit-animation: spin linear 3s;
-                animation: spin linear 3s;
+        -webkit-animation: spin linear 2;
+                animation: spin linear 2;
         -webkit-animation-duration: 1.5s;
                 animation-duration: 1.5s;
+                
   }
   .load::before{
     height: 75px;
@@ -42,13 +43,12 @@
 }
 
 .init{
-    opacity: 0;
+    opacity: 1;
     -webkit-animation-name: loading;
             animation-name: loading;
-    -webkit-animation-delay: 2s;
-            animation-delay: 2s;
-    -webkit-animation-duration: 0ms;
-            animation-duration: 0ms;
+    -webkit-animation-duration: 3s;
+            animation-duration:3s;
+            animation-timing-function: ease-in;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
 }
