@@ -1,4 +1,5 @@
 .load {
+    @include spinner-desktop;
     position: absolute;
     top:0;
     left: 0;
